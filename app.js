@@ -1,7 +1,15 @@
+var fs = require('fs');
+var http = require('http');
+var https = require('https');
+var privateKey = fs.readFileSync('certs/gcpnorsvin.key');
+var certificate = fs.readFileSync('certs/gcpnorsvin.pem');
+
+var credentials = {key: privateKey, cert: certificate};
 var express = require('express');
 var app = express();
 
 const http_port = 80;
+const https_port = 443;
 
 app.get('/', (req, res) => res.send('Nothing here! Wrong context!'));
 
@@ -20,5 +28,9 @@ app.get('/api/semen/monthlystatistics/:historical', function (req, res) {
     res.send(req.params)
 });
 
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials, app);
 
-app.listen(http_port, () => console.log(`I am listening on port ${http_port}!`));
+httpServer.listen(http_port, () => console.log(`I am listening on port ${http_port} unsecurely!`));
+httpsServer.listen(https_port, () => console.log(`I am listening on port ${https_port} securely!`));
+
