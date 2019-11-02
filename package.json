@@ -1,0 +1,19 @@
+{
+  "name": "norsvin",
+  "version": "1.0.0",
+  "description": "Norsvin example service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkAtGitH/norsvin.git"
+  },
+  "author": "Miroslav Popov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mkAtGitH/norsvin/issues"
+  },
+  "homepage": "https://github.com/mkAtGitH/norsvin#readme"
+}
