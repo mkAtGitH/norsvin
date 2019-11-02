@@ -3,6 +3,8 @@ var http = require('http');
 var https = require('https');
 var privateKey = fs.readFileSync('certs/gcpnorsvin.key');
 var certificate = fs.readFileSync('certs/gcpnorsvin.pem');
+//var privateKey = fs.readFileSync('certs/gcp_san.key');
+//var certificate = fs.readFileSync('certs/gcp_san.pem');
 
 var credentials = {key: privateKey, cert: certificate};
 var express = require('express');
@@ -31,6 +33,6 @@ app.get('/api/semen/monthlystatistics/:historical', function (req, res) {
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(http_port, () => console.log(`I am listening on port ${http_port} unsecurely!`));
+//httpServer.listen(http_port, () => console.log(`I am listening on port ${http_port} unsecurely!`));
 httpsServer.listen(https_port, () => console.log(`I am listening on port ${https_port} securely!`));
 
