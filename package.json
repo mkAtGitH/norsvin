@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mkAtGitH/norsvin/issues"
   },
-  "homepage": "https://github.com/mkAtGitH/norsvin#readme"
+  "homepage": "https://github.com/mkAtGitH/norsvin#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
